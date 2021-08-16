@@ -501,4 +501,3 @@ $name = $cosmosDbAccountName
 Write-Information "Delete linked service $($name)"
 $result = Delete-ASAObject -WorkspaceName $workspaceName -Category "linkedServices" -Name $name
 Wait-ForOperation -WorkspaceName $workspaceName -OperationId $result.operationId
-
