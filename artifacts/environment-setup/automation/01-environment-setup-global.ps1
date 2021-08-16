@@ -229,8 +229,7 @@ if ($download)
         foreach ($singleFile in $singleFiles.Keys) {
                 $source = $publicDataUrl + $singleFiles[$singleFile]
                 $destination = $dataLakeStorageBlobUrl + $singleFiles[$singleFile] + $destinationSasKey
-                Write-Information "Copying file $($source) to $($destination)"
-                & $azCopyCommand copy $source $destination 
+                $azCopyCommand copy $source $destination 
         }
 
         Write-Information "Copying sample sales raw data directories from the public data account..."
@@ -253,8 +252,7 @@ if ($download)
                 $path = $vals[0];
 
                 $destination = $dataLakeStorageBlobUrl + $path + $destinationSasKey
-                Write-Information "Copying directory $($source) to $($destination)"
-                & $azCopyCommand copy $source $destination --recursive=true
+                $azCopyCommand copy $source $destination --recursive=true
         }
 }
 
