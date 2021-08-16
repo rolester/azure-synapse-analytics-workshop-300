@@ -171,7 +171,7 @@ Write-Information "Copy Public Data"
 
 Ensure-ValidTokens
 
-if (System.Environment]::OSVersion.Platform -eq "Unix")
+if ([System.Environment]::OSVersion.Platform -eq "Unix")
 {
         $azCopyLink = Check-HttpRedirect "https://aka.ms/downloadazcopy-v10-linux"
 
